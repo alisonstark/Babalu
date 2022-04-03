@@ -20,9 +20,10 @@ const barcodeToBinList = (str) => str.split(" ").map((barStr) => barToBin(barStr
 
 // Create a function that given a barcode string returns the text for them
 // DECODER --------------------------------------------------------------
+
 const barcodeToText = (str) => barcodeToBinList(str)
     .map((elem) => String.fromCharCode(parseInt(elem, 2) - 350))
     .reverse()
     .reduce((acc, code) => code.concat(acc), '')
 
-// console.log(barcodeToText(barcodeForRandomText))
+console.log(barcodeToText(barcodeForRandomText))
